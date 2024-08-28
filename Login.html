@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 30px;
+    margin-right:40px;
+    display: none;
+}
+.logo {
+    font-size: 1em;
+    color: #fff;
+    user-select: none;
+    margin-left: 15px;
+}
+header {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background-color: #BA0F30;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    height:50px;
+    
+}
+
+
+.btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+.container{
+  width: 250px;
+  height: 480px;
+  align-items: center;
+  display: flex;
+  
+  
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  color: black;
+  background-color: white;
+  flex-direction: column;
+  padding: 10px;
+  margin-top:100px;
+  margin-left:50px;
+  
+}
+.hi{
+   color: black;
+   font-size:20px;
+   font-weight:bold;
+    
+}
+input {
+   width: 100%;
+   display: inline-block;
+   padding: 12px;
+   margin: 10;
+   color: white;
+}
+
+input[type=password], input[type=text] {
+   
+  
+   box-sizing: border-box; 
+   background-color: white;
+   color: black;
+   outline: none;
+   font-size: 0.9em;
+   border-radius:5px;
+   width: 100%;
+   
+}
+
+  
+input[type=submit] {
+    background-image: url("css.png");
+    font-weight: bold;
+    
+    text-align: center;
+    
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+  
+    border-radius: 10px;
+    display: block;
+}
+input[type=submit]:hover{
+            background-position: right center;
+            color: #fff;
+            text-decoration: none;
+}
+input[type=submit]:active{
+    color: white;
+    background-position: right center;
+}
+#invalid{
+    color: black;
+
+}
+#invalid2{
+    color:black;
+}
+.hhh{
+    color: white;
+    font-weight: bold
+}
+#io{
+    text-decoration: none;
+    color: black ;
+    margin-top: 40px;
+}
+.menu{
+    float: right;
+    height: 20px;
+    width: 20px;
+    padding-right: 10px;
+}
+.nav-overlay{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+.nav-mobile{
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    width:320px;
+    padding-top: 50px;
+    max-width: 100%;
+    background-color:white;
+    z-index: 2;
+    color:white;
+    opacity: 1;
+    transform: translateX(120%);
+    transition: transform linear 0.1s, opacity linear 0.2s;
+}
+.nav-mobile-list{
+    margin-top: 24px;
+    list-style-type: none;
+    
+}
+.nav-mobile-link{
+    text-decoration:none;
+    color: black;
+    display:block;
+    padding: 8px 0;
+    font-size: 1.4rem;
+    font-weight:bold;
+    
+}
+.nav-close{
+    width: 28px;
+    height: 28px;
+    color: black;
+    position: absolute;
+    top:1rem;
+    right:2rem;
+}
+.nav-input{
+    display:none;
+}
+.nav-input:checked ~ .nav-mobile{
+    transform: translateX(20%);
+}
+.nav-input:checked ~ .nav-overlay{
+    display: block;
+}
+@keyframes fadeIn{
+    from{
+     opacity: 0;
+    }
+    to{
+     opacity:1;
+    }
+}
+ul{
+    list-style-type: none;
+}
+a .log{
+    background-color: #BA0F30;
+    width: 79px;
+    height: 30px;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    transition: .5s;
+    text-decoration: none;
+    font-size: 12px;
+}
+.log:hover{
+    background-color: white;
+    border: 2px solid #BA0F30;
+    color: #BA0F30;
+    
+}
+hr{
+    height: 0.5px;
+    background-color: black;
+}
+.h{
+    background-color: #BA0F30;
+}
+.imgl{
+    background-color: white;
+    width:210px;
+    height: 40px;
+    border-radius: 40px;
+}
+@media only screen and (min-width: 740px){
+    .navigation a {
+      display: inline-block;
+    }
+    .nav-mobile{
+        display: none;
+    }
+    .nav-close{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    .nav-mobile-list{
+        display: none;
+    }
+    .nav-mobile-link{
+        display: none;
+    }
+    .btnLogin-popup{
+        display: inline-block;
+    }
+    header{
+        height: 70px;
+    }
+    .container{
+        margin-left: 320px;
+        margin-top: 500px;
+    }
+    .logo{
+        font-size: 25px;
+    }
+    
+    #iu{
+        margin-left: 600px;
+        margin-top: 200px;
+        
+    }
+}
+#iu{
+    width: 270px;
+    height: 90px;
+    color: white;
+    background-color: #BA0F30;
+    display: block;
+    margin-top: 100px;
+    margin-left: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    text-align:center;
+}
+
+body{
+    
+    font-weight: bold;
+    background-image: url("css.png");
+    height: 90vh;
+    width: 80vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+</style> 
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width" initial-scale="1.0">
+     <title>Login</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+    <body>
+        
+     <header>
+        <h2 class="logo">Codelearn</h2>
+         
+        <nav class="navigation a">
+            <a href="#">Home</a>
+            <a href="course.html">Course</a>
+            <a href="#">Solution</a>
+            <a href="#">Menu</a>
+            
+        </nav>
+        <input type="checkbox" name="" class="nav-input" id="check">
+        <label for="check" class="menu">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+        </label>
+        <label for="check" class="nav-overlay"></label>
+      
+     <nav class="nav-mobile">
+       <div class="h">
+        <label for="check" class="nav-close">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+       </label>  
+       </div>
+        
+        <ul class="nav-mobile-list">
+            
+            <li>
+                <a href="#" class="nav-mobile-link">Home</a>
+            </li>
+            
+            <li>
+                <a href="course.html"class="nav-mobile-link">Course</a>
+            </li>
+            
+            <li>
+                <a href="#" class="nav-mobile-link">Solution</a>
+            </li>
+            
+            <li>
+                <a href="#" class="nav-mobile-link">Menu</a>
+            </li>
+            
+             <li>
+                <a href="#" class="nav-mobile-link">Feedback</a>
+            </li>
+             <li>
+                <a href="#" class="nav-mobile-link">Setting</a>
+            </li>
+        </ul>
+    </nav>   
+    </header>
+    
+   
+    <div class="container">
+    <p class="hi">Login</p>
+    <form action="" method="get" autocomplete="off">
+        <label for="username"></label>
+        <input id="username"type="text" name="username" placeholder="Username" required autofocus/>
+        <p id="invalid"></p>
+        <label for="password"></label>
+        <input id ="password"type="password" name="password" placeholder="Password" required/>
+        <p id="invalid2"></p>
+        <input type="submit" onclick="Login()" name="submit" value="Login"/>
+    </form>
+    
+    <p style="text-align: center; font-weight: bold; ">or</p>
+    <a href=" https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://accounts.google.com/signup/v2/webcreateaccount%3Fhl%3Den-GB%26flowName%3DGlifWebSignIn%26flowEntry%3DSignUp/&ved=2ahUKEwjw17nbkcWHAxU9slYBHa91JV0QFnoECCcQAQ&usg=AOvVaw2jHnwK-68TsShjoTIc2DLH">
+    <button class="imgl">
+        <svg class="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10px" height="10px" viewBox="-0.5 0 48 48" version="1.1"> <title>Google-color</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Color-" transform="translate(-401.000000, -860.000000)"> <g id="Google" transform="translate(401.000000, 860.000000)"> <path d="M9.82727273,24 C9.82727273,22.4757333 10.0804318,21.0144 10.5322727,19.6437333 L2.62345455,13.6042667 C1.08206818,16.7338667 0.213636364,20.2602667 0.213636364,24 C0.213636364,27.7365333 1.081,31.2608 2.62025,34.3882667 L10.5247955,28.3370667 C10.0772273,26.9728 9.82727273,25.5168 9.82727273,24" id="Fill-1" fill="#FBBC05"> </path> <path d="M23.7136364,10.1333333 C27.025,10.1333333 30.0159091,11.3066667 32.3659091,13.2266667 L39.2022727,6.4 C35.0363636,2.77333333 29.6954545,0.533333333 23.7136364,0.533333333 C14.4268636,0.533333333 6.44540909,5.84426667 2.62345455,13.6042667 L10.5322727,19.6437333 C12.3545909,14.112 17.5491591,10.1333333 23.7136364,10.1333333" id="Fill-2" fill="#EB4335"> </path> <path d="M23.7136364,37.8666667 C17.5491591,37.8666667 12.3545909,33.888 10.5322727,28.3562667 L2.62345455,34.3946667 C6.44540909,42.1557333 14.4268636,47.4666667 23.7136364,47.4666667 C29.4455,47.4666667 34.9177955,45.4314667 39.0249545,41.6181333 L31.5177727,35.8144 C29.3995682,37.1488 26.7323182,37.8666667 23.7136364,37.8666667" id="Fill-3" fill="#34A853"> </path> <path d="M46.1454545,24 C46.1454545,22.6133333 45.9318182,21.12 45.6113636,19.7333333 L23.7136364,19.7333333 L23.7136364,28.8 L36.3181818,28.8 C35.6879545,31.8912 33.9724545,34.2677333 31.5177727,35.8144 L39.0249545,41.6181333 C43.3393409,37.6138667 46.1454545,31.6490667 46.1454545,24" id="Fill-4" fill="#4285F4"> </path> </g> </g> </g> </svg>
+        <span>Login with Google</span>
+    </button>
+  </a>
+    <a href="sign-up.html" id="io">Create New Account?</a>
+    </body>
+    <script>
+        
+        function Login(){
+            var us = { username:"Lwg", password: "Lwg"};
+            var username = $("#username").val();
+            var password = $("#password").val();
+            if(username !== us.username && password !== us.password){
+                alert("username incorrect or password incorrect");
+            }
+            else if( username !== us.username && password == us.password){
+               alert("username incorrect or password incorrect");
+            } 
+            else if( username == us.username && password == us.password){
+                 alert("wellcome " + username);
+           }
+           else if( username == null && password == null){
+                 alert("username or password cant empty");
+           }
+           
+     }     
+    </script>
+</html>
