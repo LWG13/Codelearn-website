@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 30px;
+    margin-right:40px;
+    display: none;
+}
+.logo {
+    font-size: 1em;
+    color: #fff;
+    user-select: none;
+    padding: 10px;
+}
+header {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background-color: #BA0F30;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    height:50px;
+   
+}
+.btnLogin-popup {
+    width: 120px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: .5s;
+    display:none;
+    
+}
+
+.btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+.container{
+  width: 250px;
+  height: 480px;
+  align-items: center;
+  display: flex;
+  
+  
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  color: black;
+  background-color: white;
+  flex-direction: column;
+  padding: 10px;
+  margin-top:100px;
+  margin-left:50px;
+  
+}
+.hi{
+    
+   font-size:20px;
+   font-weight:bold;
+    
+}
+input {
+   width: 100%;
+   display: inline-block;
+   padding: 12px;
+   margin: 10;
+   color: white;
+}
+
+input[type=password], input[type=text] {
+   
+  
+   box-sizing: border-box; 
+   background-color: white;
+   color: black;
+   outline: none;
+   font-size: 0.9em;
+   border-radius: 5px;
+   width: 100%;
+   
+}
+
+input[type=submit] {
+    background-image: url("css.png");
+    font-weight: bold;
+    
+    text-align: center;
+    
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+  
+    border-radius: 10px;
+    display: block;
+}
+input[type=submit]:hover{
+            background-position: right center;
+            color: #fff;
+            text-decoration: none;
+}
+input[type=submit]:active{
+    color: white;
+    background-position: right center;
+}
+    
+
+#suggest{
+    color: white;
+}
+.hhh{
+    color: white;
+    font-weight: bold
+}
+#io{
+    text-decoration: none;
+    color: black;
+    margin-top: 40px;
+}
+.menu{
+    float: right;
+    height: 20px;
+    width: 20px;
+    padding-right: 10px;
+}
+.nav-overlay{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+.nav-mobile{
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    width:320px;
+    padding-top: 50px;
+    max-width: 100%;
+    background-color: #BA0F30;
+    z-index: 2;
+    color:white;
+    opacity: 1;
+    transform: translateX(120%);
+    transition: transform linear 0.1s, opacity linear 0.2s;
+}
+.nav-mobile-list{
+    list-style-type:none;
+    margin-top: 24px;
+    
+}
+.nav-mobile-link{
+    text-decoration:none;
+    color: white;
+    display:block;
+    padding: 8px 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    
+}
+.nav-close{
+    width: 28px;
+    height: 28px;
+    color: black;
+    position: absolute;
+    top:1rem;
+    right:2rem;
+}
+.nav-input{
+    display:none;
+}
+.nav-input:checked ~ .nav-mobile{
+    transform: translateX(20%);
+}
+.nav-input:checked ~ .nav-overlay{
+    display: block;
+}
+@keyframes fadeIn{
+    from{
+     opacity: 0;
+    }
+    to{
+     opacity:1;
+    }
+}
+ul{
+    list-style-type: disc;
+}
+.log {
+    background-color: #BA0F30;
+    width: 80px;
+    height: 30px;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    transition: .5s;
+    text-decoration: none;
+    font-size: 12px;
+}
+.log:hover{
+    background-color: white;
+    border: 2px solid #BA0F30;
+    color: #BA0F30;
+}
+hr{
+    height: 2px;
+    background-color: white;
+}
+.j {
+    width: 200px;
+    height: 40px;
+    border-radius:20px;
+}
+
+@media only screen and (min-width: 740px){
+    .navigation a {
+      display: inline-block;
+    }
+    .nav-mobile{
+        display: none;
+    }
+    .nav-close{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    .nav-mobile-list{
+        display: none;
+    }
+    .nav-mobile-link{
+        display: none;
+    }
+    .btnLogin-popup{
+        display: none;
+    }
+    header{
+        height: 70px;
+    }
+    .container{
+        margin-left: 320px;
+        margin-top: 500px;
+    }
+    .logo{
+        font-size: 25px;
+    }
+    
+}
+@media only screen and (max-width: 740px){
+    .dropdrown{
+        display: none;
+    }
+    .dropbtn{
+        display: none;
+    }
+    
+}
+#h{
+    color: white;
+    
+}
+.iu{
+    width: 270px;
+    height: 90px;
+    color: white;
+    background-color: #BA0F30;
+    display: block;
+    margin-top: 100px;
+    margin-left: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+body{
+    
+    font-weight: bold;
+    background-image: url("css.png");
+    height: 100vh;
+    width: 80vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.dropbtn {
+  background-color: #BA0F30;
+  color: white;
+  padding: 16px;
+  font-size: 1.1em;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  height: 530px;
+  width: 250px;
+  box-shadow: 8pxpx 8px 16px 8px;
+  z-index: 1;
+  margin-top: 25px;
+  box-shadow: 0 0 7px #333;
+  margin-right: 14px;
+  right:0;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover { background-color: rose}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation: fadeIn 0.3s;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #66000;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.name{
+    color:black;
+   
+}
+profile1{
+    display:flex;
+
+
+    font-weight: 50px;
+}
+</style>        
+     <meta name="viewport" content="width=device-width" initial-scale="1.0">
+     <title>Sign Up</title>
+     
+    </head>
+    
+    <body>
+     <header>
+        <h2 class="logo">Codelearn</h2>
+        
+        <nav class="navigation a">
+            <a href="#">Home</a>
+            <a href="course.html">Course</a>
+            <a href="#">Solution</a>
+            <a href="#">Menu</a>
+             
+            
+        </nav>
+        <input type="checkbox" name="" class="nav-input" id="check">
+        <label for="check" class="menu">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+        </label>
+        <label for="check" class="nav-overlay"></label>
+      
+         <nav class="nav-mobile">
+        <label for="check" class="nav-close">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+       </label>
+        <hr>
+        <ul class="nav-mobile-list">
+            
+            <li>
+                <a href="#" class="nav-mobile-link">Home</a>
+            </li>
+            
+            <li>
+                <a href="course.html"class="nav-mobile-link">Course</a>
+            </li>
+            
+            <li>
+                <a href="#" class="nav-mobile-link">Solution</a>
+            </li>
+            
+            <li>
+                <a href="#" class="nav-mobile-link">Menu</a>
+            </li>
+            
+             <li>
+                <a href="#" class="nav-mobile-link">Feedback</a>
+            </li>
+             <li>
+                <a href="#" class="nav-mobile-link">Setting</a>
+            </li>
+        </ul>
+    </nav>   
+    </header>
+   
+    <div class="container">
+    <p class="hi">Sign Up</p>
+    <form action="" method="get" autocomplete="off">
+        <label for="username"></label>
+        <input id="username"type="text" name="username" placeholder="Name" required autofocus/>
+        <p id="invalid"></p>
+        <label for="password"></label>
+        <input id ="password"type="password" name="password" placeholder="Password" required/>
+        <p id="invalid2"></p>
+        <input onclick="signUp()"type="submit" name="submit" value="Create new account"/>
+    </form>
+    <p style="text-align:center; font-weight: bold;">or</p>
+    <a href=" https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://accounts.google.com/signup/v2/webcreateaccount%3Fhl%3Den-GB%26flowName%3DGlifWebSignIn%26flowEntry%3DSignUp/&ved=2ahUKEwjw17nbkcWHAxU9slYBHa91JV0QFnoECCcQAQ&usg=AOvVaw2jHnwK-68TsShjoTIc2DLH">
+    <button type="button" class="j">
+        <svg width:"20px" height=" 10px"aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path>
+        </svg>
+    Sign up with Google</button>
+     </a>
+    <a href="login.html" id="io">Already have account?</a>
+    
+</div>
+    <script>
+        
+        
+        var username= document.getElementById("username");
+        var password=document.getElementById("password");
+        var invalid= document.getElementById("invalid");
+        var invalid2= document.getElementById("invalid2");
+        function signUp(){
+            if(username.value.length < 2 && password.value.length < 6){
+               invalid.innerHTML="username must longer than 2 word!"
+               invalid2.innerHTML="password must longer than 6 word!"               
+            }
+            if(username.value.length < 2&& password.value.length == 6){
+               invalid.innerHTML="username must longer than 2 word!"
+               invalid2.innerHTML=""               
+            }
+            if(username.value.length == 2 && password.value.length < 6){
+               invalid.innerHTML=""
+               invalid2.innerHTML="password must longer than 6 word!"               
+            }
+        }
+        
+</script>
+    </body>
+</html>
